@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Foldit:wght@100;400;600&family=Notable&family=Noto+Sans+Linear+B&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    color: #ffffff;
+}
+
+body {
+    margin-top: 400px;
+    font-family: 'Noto Sans Linear B', sans-serif;
+    background: url('../img/333.png') no-repeat center center fixed;
+    background-size: cover;
+    overflow: auto; /* Ensure no horizontal scroll */
+}
+
+.glass-window {
+    width: 100%;      /* 默认宽度为100% */
+    max-width: 800px; /* 设置最大宽度 */
+    min-width: 300px;  /* 设置最小宽度 */
+    margin: 0 auto; 
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid white;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 1rem;
+}
+@media (max-width: 600px) {
+    .glass-window {
+        width: 95%;
+    }
+}
+
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    .glass-window {
+        width: 90%;
+    }
+}
+
+
+@media (min-width: 1025px) {
+    .glass-window {
+        width: 85%;
+    }
+}
+header img {
+    width: 100%;      /* 默认宽度为100% */
+    max-width: 800px; /* 设置最大宽度 */
+    min-width: 300px;  /* 设置最小宽度 */
+    display: block;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    position: fixed;
+    z-index: -1;  /* 使图片位于内容的后面 */
+    transition: filter 0.1s;  /* 平滑的模糊过渡 */
+}
+
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 1rem auto;
+}
+
+main {
+    padding: 1rem;
+}
+
+.row1 {
+    font-family: 'Luckiest Guy', cursive;
+    font-family: 'Permanent Marker', cursive;
+    font-family: 'Satisfy', cursive;
+    font-family: 'UnifrakturMaguntia', cursive;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.row2{
+    font-family: 'Permanent Marker', cursive;
+    font-family: 'Satisfy', cursive;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.row3 {
+    font-family: 'Courgette', cursive;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer {
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+.rain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    height: 100vh;
+    width: 100vw;
+    background: transparent;
+    z-index: 999;
+}
+
+.drop {
+    background: rgba(255, 255, 255, 0.6);
+    width: 1px;
+    height: 89px;
+    position: absolute;
+    bottom: 100%;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(1000vh);
+    }
+}

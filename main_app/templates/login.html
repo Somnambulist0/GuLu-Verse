@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../static/css/logreg.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+
+        {% for message in messages %}
+        <p class="{{ message.tags }}">{{ message }}</p>
+        {% endfor %}
+        
+        <form id="loginForm" method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            <input type="text" placeholder="Username" id="loginUsername" name="loginUsername">
+            <input type="password" placeholder="Password" id="loginPassword" name="loginPassword">
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

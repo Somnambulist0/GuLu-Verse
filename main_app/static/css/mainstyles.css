@@ -1,0 +1,84 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #FFFFFF;
+    background-image: url('../img/08.png');
+    background-repeat: no-repeat;  
+    background-position: center center;  
+    background-size: cover;  
+    background-attachment: fixed;
+}
+
+.window {
+    width: 60%;
+    padding: 20px;
+    background: #F0F0F0;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border: 5px solid #000000;
+}
+
+.title {
+    font-family: 'Arial', sans-serif;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+.arrow-button, button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #000000;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.arrow-button:hover, button:hover {
+    background-color: #333333;
+}
+
+.arrow-button i {
+    margin-right: 5px;
+}
+
+form {
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+div {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+select, input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    color: #000000;
+    background-color: #FFFFFF;
+}
+
+#recommendation {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}

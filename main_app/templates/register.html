@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="../static/css/logreg.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Register</h2>
+
+        {% for message in messages %}
+        <p class="{{ message.tags }}">{{ message }}</p>
+        {% endfor %}
+        
+        <form id="registerForm" method="post">
+            {% csrf_token %}
+            <input type="text" placeholder="Username" id="registerUsername" name="registerUsername">
+            <input type="password" placeholder="Password" id="registerPassword" name="registerPassword">
+            <button type="submit">Register</button>
+        </form>
+        <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+    </div>
+</body>
+</html>
+
