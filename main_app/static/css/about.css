@@ -7,60 +7,54 @@
 }
 
 body {
-    margin-top: 400px;
     font-family: 'Noto Sans Linear B', sans-serif;
     background: url('../img/333.png') no-repeat center center fixed;
     background-size: cover;
-    overflow: auto; /* Ensure no horizontal scroll */
+    overflow: auto;
+    line-height: 1.6;
+    padding: 2rem 0;
+    padding-bottom: 100px;/*in order not to be overlapped with footer*/
 }
 
 .glass-window {
-    width: 100%;      /* 默认宽度为100% */
-    max-width: 800px; /* 设置最大宽度 */
-    min-width: 300px;  /* 设置最小宽度 */
-    margin: 0 auto; 
-    overflow: hidden;
+    width: 80%;
+    margin: 0 auto;
     background: rgba(255, 255, 255, 0.1);
     border: 2px solid white;
     backdrop-filter: blur(10px);
     border-radius: 10px;
-    padding: 1rem;
-}
-@media (max-width: 600px) {
-    .glass-window {
-        width: 95%;
-    }
+    padding: 2rem;
 }
 
-
-@media (min-width: 601px) and (max-width: 1024px) {
-    .glass-window {
-        width: 90%;
-    }
+header .header-content {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-family: 'Luckiest Guy', cursive;
+}
+.header-content2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-family: 'Courgette', cursive;
+    font-family: 'Luckiest Guy', cursive;
 }
 
-
-@media (min-width: 1025px) {
-    .glass-window {
-        width: 85%;
-    }
-}
-header img {
-    width: 100%;      /* 默认宽度为100% */
-    max-width: 800px; /* 设置最大宽度 */
-    min-width: 300px;  /* 设置最小宽度 */
-    display: block;
-    width: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: 0 auto;
-    position: fixed;
-    z-index: -1;  /* 使图片位于内容的后面 */
-    transition: filter 0.1s;  /* 平滑的模糊过渡 */
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
 }
 
+.intro, .details {
+    margin-bottom: 2rem;
+}
+
+.intro h2, .details h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.details p {
+    margin-bottom: 1.5rem;
+}
 
 img {
     display: block;
@@ -69,56 +63,29 @@ img {
     margin: 1rem auto;
 }
 
-main {
-    padding: 1rem;
+.return-home-button {
+    position: fixed; 
+    top: 40px; 
+    left: 10px; 
+    font-size: 24px; 
+    cursor: pointer; 
 }
 
-.row1 {
-    font-family: 'Luckiest Guy', cursive;
-    font-family: 'Permanent Marker', cursive;
-    font-family: 'Satisfy', cursive;
-    font-family: 'UnifrakturMaguntia', cursive;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-    padding: 1rem;
-    margin: 0.5rem 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.row2{
-    font-family: 'Permanent Marker', cursive;
-    font-family: 'Satisfy', cursive;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-    padding: 1rem;
-    margin: 0.5rem 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.row3 {
-    font-family: 'Courgette', cursive;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-    padding: 1rem;
-    margin: 0.5rem 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.return-home-button i:hover {
+    color: #FFD700; 
 }
 
 footer {
-    padding: 1rem;
+    text-align: center;
+    padding: 2rem 1rem;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
-    text-align: center;
-}
-
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px; /* 页脚的内边距 */
+    }
 .rain {
     position: fixed;
     top: 0;
@@ -144,3 +111,5 @@ footer {
         transform: translateY(1000vh);
     }
 }
+
+

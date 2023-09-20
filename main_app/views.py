@@ -2,11 +2,18 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+from .models import UserProfile
+
 
 # Create your views here.
 
 def index0(request):
-    return render(request, 'index0.html')
+    if request.user.is_authenticated:
+        profile, created = UserProfile.objects.get_or_create(user=request.user)
+        return render(request, 'user_index0.html', {'profile': profile})
+    else:
+        return render(request, 'index0.html')
 
 def main(request):
     return render(request, 'main.html')
@@ -37,3 +44,4 @@ def register_view(request):
 
 def about_view(request):
     return render(request, 'about.html')
+

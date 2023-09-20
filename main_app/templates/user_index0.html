@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gulu's Adventure - Home</title>
+    <link rel="stylesheet" href="../static/css/index0.css">
+</head>
+<body>
+    <header>
+        <h1>Gulu-verse</h1>
+        <nav>
+            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'logout' %}">Logout</a>
+            <div class="user-profile">
+                <img src="{{ profile.avatar.url }}" alt="User" class="user-avatar">
+                <span>{{ user.username }}</span>
+            </div>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <div class="window">
+            <p>Welcome back, {{ user.username }}! Click the button below to continue your adventure!</p>
+            <a href="{% url 'main' %}" class="start-button">Click me to continue</a>
+        </div>
+    </main>
+    <footer>
+        <p>© 2023 Gulu-verse. All rights reserved.</p>
+    </footer>
+</body>
+</html>

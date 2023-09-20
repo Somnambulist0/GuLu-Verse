@@ -17,6 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from main_app import views
+from django.conf import settings
+from django.conf.urls.static import static
+from django.contrib.auth.views import LogoutView
+
+
+
 
 
 urlpatterns = [
@@ -24,6 +30,9 @@ urlpatterns = [
     path('', views.index0, name='index0'),
     path('main/', views.main, name='main'),
     path('login/', views.login_view, name='login'),
+    path('logout/', LogoutView.as_view(next_page='index0'), name='logout'),
     path('register/', views.register_view, name='register'),
     path('about/', views.about_view, name='about'),
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
