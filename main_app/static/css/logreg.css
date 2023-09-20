@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #282c35;  /* 暗色调的背景色 */
+    background-color: #282c35;  
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,8 +10,8 @@ body {
 .container {
     width: 340px;
     padding: 30px;
-    background-color: #33363f;  /* 暗色调的容器背景 */
-    border: 1px solid #5a5c63;  /* 细微的边框 */
+    background-color: #33363f;  
+    border: 1px solid #5a5c63;  
     border-radius: 7px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
@@ -21,7 +21,7 @@ h2 {
     letter-spacing: 1px;
     text-align: center;
     margin-bottom: 30px;
-    color: #d4af37;  /* 金色的标题 */
+    color: #d4af37;  
 }
 
 form {
@@ -32,23 +32,23 @@ form {
 input {
     padding: 12px 15px;
     margin-bottom: 15px;
-    background: #41454a;  /* 输入框背景 */
-    color: #e5e5e5;  /* 输入文字颜色 */
-    border: 1px solid #5a5c63;  /* 输入框边框 */
+    background: #41454a;  
+    color: #e5e5e5;  
+    border: 1px solid #5a5c63;  
     border-radius: 5px;
     transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 input:focus {
-    border-color: #d4af37;  /* 聚焦时的金色边框 */
+    border-color: #d4af37;  
     box-shadow: 0 0 5px rgba(212, 175, 55, 0.4);
     outline: none;
 }
 
 button {
     padding: 12px 15px;
-    background-color: #d4af37;  /* 金色按钮 */
-    color: #33363f;  /* 暗色按钮文字 */
+    background-color: #d4af37;  
+    color: #33363f; 
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -56,7 +56,7 @@ button {
 }
 
 button:hover {
-    background-color: #b79415;  /* 按钮悬停深金色 */
+    background-color: #b79415;  
     transform: scale(1.05);
 }
 
@@ -64,12 +64,12 @@ p {
     font-size: 14px;
     text-align: center;
     margin-top: 20px;
-    color: #a9acb1;  /* 中性的文字颜色 */
+    color: #a9acb1;  
 }
 
 a:hover {
     text-decoration: underline;
-    color: #d4af37;  /* 金色链接悬停 */
+    color: #d4af37;  
 }
 
 .return-home-button {
