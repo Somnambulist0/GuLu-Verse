@@ -13,7 +13,7 @@ body {
     right: 0;
     bottom: 0;
     height: 5000px;
-    background-image: url('../img/roadf.jpg');
+    background-image: url('../img/roadf.png');
     background-repeat: repeat-y;
     background-position: calc(50%) top;
     background-size: 100% auto;
