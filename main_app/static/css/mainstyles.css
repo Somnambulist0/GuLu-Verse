@@ -134,6 +134,22 @@ form {
     z-index: 9;
 }
 
+@media only screen and (max-width: 768px) {
+    .talk-bubble {
+        width: 20vw;  
+        min-height: 20vh; 
+        padding: 2vw; 
+        font-size: 0.45em; 
+    }
+
+    button {
+        padding: 8px 16px;  
+        font-size: 0.9em; 
+    }
+
+}
+
+
 .border {
     border: 8px solid #666;
 }
