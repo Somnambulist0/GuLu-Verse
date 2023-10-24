@@ -1,28 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gulu's Adventure - Home</title>
-    <link rel="stylesheet" href="../static/css/index0.css">
-</head>
-<body>
-    <header>
-        <h1>Gulu-verse</h1>
-        <nav>
-            <a href="{% url 'about' %}">About</a>
-            <a href="{% url 'login' %}">login</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
-    <main>
-        <div class="window">
-            <p>Click the button below to begin your adventure!</p>
-            <a href="{% url 'main' %}" class="start-button">Click me to begin</a>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gulu-verse</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/15181efa86.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/index0.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Luckiest+Guy&family=Nosifer&family=Permanent+Marker&family=Pixelify+Sans&family=Rock+Salt&family=Rubik+Pixels&family=Satisfy&family=Monoton&family=Righteous&family=UnifrakturMaguntia&display=swap" rel="stylesheet">    
+  </head>
+  <body>
+    <section class="hero is-medium">
+      <div class="glowing-menu">
+        <ul>
+            <li style="--clr:#00ade1">
+                <a href="#" data-text="Home">Home</a>
+            </li>
+            <li style="--clr:#ff6492">
+                <a href="about" data-text="About">About</a>
+            </li>
+            <li style="--clr:#dc00d4">
+                <a href="mailto:mathiwi@163.com" data-text="Contact">Contact</a>
+            </li>
+        </ul>
+    </div>
+  </section>
+  
+    <section class="hero is-medium hero-intro">
+      <div class="hero-body">
+          <div class="container">
+              <h1 class="title is-1">GULU-VERSE</h1>
+              <h2 class="subtitle">Where Dreams Flutter and Souls Whisper.</h2>
+              <a href="about" class="button is-white is-medium is-inverted">Learn More&ensp;<i class="fad fa-chevron-right"></i></a>
+          </div>
+      </div>
+    </section>  
+    <section id="parallax-1" class="hero is-large transparent-divider">
+      <div class="hero-body">
+        <div class="container">
+          <div class="columns">
+            <div class="column is-6 is-offset-6">
+              <h1 class="title is-1 ">Adventure</h1>
+              <hr class="content-divider">
+              <h2 class="subtitle">Do you want to start to plan your new day? 
+                <div>WALK ON THIS SPECIAL STREET. 
+                <div>Click here to have a personalized plan for your day!</h2>
+              <a href="main" class="button is-white is-inverted">PLAN YOUR DAY&ensp;<i class="fad fa-chevron-right"></i></a>
+            </div>
+          </div>
         </div>
-    </main>
-    <footer>
-        <p>© 2023 Gulu-verse. All rights reserved.</p>
-    </footer>
-</body>
+      </div>
+    </section>
+    <section id="parallax-2" class="hero is-large transparent-divider ">
+      <div class="hero-body">
+        <div class="container">
+          <div class="columns">
+            <div class="column is-6">
+              <h1 class="title is-1 ">99-Things</h1>
+              <hr class="content-divider">
+              <h2 class="subtitle">Do you want to directly find some inspirations to plan your days? 
+                <div>Here are 99 things to do. 
+                <div>Click here to try to plan your day!</h2>
+              <a href="todo" class="button is-white is-inverted">ToDo&ensp;<i class="fad fa-chevron-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="cta va transparent-divider">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-6">
+            <h1 class="title is-1 ">JOIN US</h1>
+            <hr class="content-divider">
+            <h2 class="subtitle"></h2>
+          </div>
+          <div class="column is-6">
+            <div class="field">
+              <label class="label">Name</label>
+              <div class="control">
+                <input class="input is-medium" type="text" placeholder="William">
+              </div>
+            </div>
+            <br>
+            <div class="field">
+              <label class="label">Email</label>
+              <div class="control">
+                <input class="input is-medium" type="email" placeholder="william@guluverse.com">
+              </div>
+            </div>
+            <br>
+            <div class="field is-grouped">
+              <div class="control">
+                <button class="button is-white is-rounded is-outlined">Submit</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>   
+    <footer class="footer">
+      <div class="content has-text-centered">
+          © 2023 Gulu-verse. All rights reserved.
+      </div>
+    </footer>   
+  </body>
 </html>

@@ -1,99 +1,210 @@
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
+:root {
+  ::-webkit-scrollbar{height:10px;width:10px}
+  ::-webkit-scrollbar-track{background:#efefef;border-radius:6px}
+  ::-webkit-scrollbar-thumb{background:#d5d5d5;border-radius:6px}
+  ::-webkit-scrollbar-thumb:hover{background:#c4c4c4}
+  }
+  .va {
+    display: flex;
+    align-items: center;
+  }
+
+  .cta {
+    border-top: 10px solid rgb(143, 182, 190);
+    height: 600px;
+    background: url(../img/dk11.png)
+  }
+
+  footer {
+    color: white;
+    background: rgb(14, 14, 14) !important;
+  }
+  
+  .title {
+    color: white;
+    font-weight: 800;
+    font-size: 4rem;
+    font-family: 'Nunito Sans', sans-serif;
+    text-shadow: 1px 1px 1px #000, 3px 3px 5px rgb(0, 0, 3);
+  }
+  
+  .subtitle {
+    color: white;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 1px #000, 3px 3px 5px rgb(0, 0, 3);
+    font-family:Righteous
+  }
+  
+  hr.content-divider {
+    max-width: 75px;
+    height: 5px;
+  }
+  
+  #parallax-1 {
+    border-top: 10px solid rgb(206, 165, 136);
+    background: url(../img/jn.png);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  #parallax-1 hr {
+    background: coral;
+  }
+  
+  #parallax-2 {
+    border-top: 10px solid rgb(130, 149, 147);
+    background: url(../img/jn2.png);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  #parallax-2 hr {
+    background: yellow;
+  }
+  
+  
+  .label {
+    color: white;
+  }
+
+  a:hover, .button:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+  }
+  
+  a:active, .button:active {
+    transform: scale(0.95);
+  }
+  
+  input {
+    background: transparent !important;
+    border: 1px solid turquoise !important;
+    color: white !important;
+  }
+  
+  input::placeholder {
+    color: white !important;
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Courgette&family=Luckiest+Guy&family=Permanent+Marker&family=Rubik+Pixels&family=Satisfy&family=UnifrakturMaguntia&display=swap');
+  .hero-intro {
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-image: url('../img/777.png');
-    background-repeat: no-repeat;  
-    background-position: center center;  
-    background-size: cover;  
-    background-attachment: fixed;  
+    background-image: url('../img/dk4.png');
+    background-size: cover;
+    background-position: center;
+    filter: saturate(1.2) brightness(0.8);
 }
 
-header {
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #FFFFFF;
-    text-align: center;
-    padding: 20px 0;
-}
+  .hero-intro .hero-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%; 
+      padding: 0;
+  }
+  
+  .hero-intro .container {
+      text-align: center;
+      flex: 1; 
+      display: flex;
+      flex-direction: column;
+      justify-content: center; 
+      align-items: center;
+  }
+  
+  .title.is-1 {
+      font-size: 4rem;
+      font-family: Nosifer;
+      font-family: 'Monoton';
+  }
+      
+  .subtitle {
+      font-size: 1.5rem;
+      margin-top: 20px;  
+  }
+      
+  .button {
+      margin-top: 30px; 
+      font-size: 1.2rem;
+      padding: 15px 30px;  
+      font-family: Pixelify Sans, cursive;
+  }
+  .hero-intro .title.is-1 {
+    font-size: 6rem;
+    font-family: 'Rubik Pixels', cursive; 
+  }
 
-header h1 {
-    margin: 0;
-    font-size: 3em;
-    font-weight: bold;
-}
+  .hero-intro .subtitle {
+      font-size: 1.5rem;
+      margin-top: 20px;  
+      font-family: Rock Salt, cursive;
+  }
+  
+  
+/* menu button */
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
 
-nav a {
-    margin: 0 15px;
-    color: #FFFFFF;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-nav a:hover {
-    color: #84fab0;
-}
-
-.user-profile {
-    display: flex;
-    align-items: center;
-}
-
-.user-avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-.window {
-    width: 70%;
-    margin: 50px auto;
-    padding: 40px;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 20px;
-    text-align: center;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
-}
-
-.start-button {
-    display: inline-block;
-    padding: 15px 30px;
-    background-color: #000;
-    color: #FFFFFF;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: bold;
-    transition: transform 0.3s, background-color 0.3s;
-}
-
-.start-button:hover {
-    transform: scale(1.1);
-    background-color: #333333;
-}
-
-footer {
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #FFFFFF;
-    text-align: center;
-    padding: 10px 0;
-}
-/*user_index0*/
-.user-profile {
+.glowing-menu {
     position: fixed;
-    top: 10px;
-    right: 10px;
-    display: flex;
-    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.85); 
+    padding: 10px 0; 
+    z-index: 1000;
 }
 
-.user-avatar {
-    width: 40px; 
-    height: 40px;
-    border-radius: 50%; 
-    margin-right: 10px; 
+.glowing-menu ul {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    gap: 50px; 
 }
+
+.glowing-menu ul li {
+    list-style: none;
+}
+
+.glowing-menu ul li a {
+    font-size: 1.5em;
+    text-decoration: none;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease-in-out;
+}
+
+.glowing-menu ul li a:hover {
+    -webkit-text-stroke: 1px transparent; 
+}
+
+.glowing-menu ul li a::before {
+  pointer-events: none;
+  content: attr(data-text);
+  position: absolute;
+  color: var(--clr);
+  width: 0;
+  overflow: hidden;
+  transition: 0.3s;
+  -webkit-text-stroke: 1px var(--clr);
+  white-space: nowrap; 
+}
+
+.glowing-menu ul li a:hover::before {
+  width: calc(100% + 2px); 
+  filter: drop-shadow(0 0 25px var(--clr));
+}
+
+.button.is-white.is-rounded.is-outlined {
+    color: #000; 
+    background-color: #E8E8E8; 
+}
+
+
+

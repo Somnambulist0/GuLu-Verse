@@ -1,15 +1,22 @@
+/* main body */
 body {
     font-family: 'Arial', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    height: 3000px;
     background-color: #FFFFFF;
-    background-image: url('../img/08.png');
-    background-repeat: no-repeat;  
-    background-position: center center;  
-    background-size: cover;  
-    background-attachment: fixed;
+    overflow: auto;
+}
+
+.road {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 5000px;
+    background-image: url('../img/roadf.jpg');
+    background-repeat: repeat-y;
+    background-position: calc(50%) top;
+    background-size: 100% auto;
 }
 
 .window {
@@ -20,8 +27,37 @@ body {
     text-align: center;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     border: 5px solid #000000;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
 }
 
+.character {
+    position: fixed;
+    top: 50%;
+    left: 52.5%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 200px;
+    background-repeat: no-repeat; 
+    background-size: contain;
+    z-index: 10;
+    animation: switchImages 0.15s infinite alternate;
+}
+
+@keyframes switchImages {
+    0%, 49% {
+        background-image: url('../img/dog-1.png');
+    }
+    50%, 100% {
+        background-image: url('../img/dog-2.png');
+    }
+}
+
+
+/* bubble and button - button */
 .title {
     font-family: 'Arial', sans-serif;
     font-size: 2.5em;
@@ -29,34 +65,35 @@ body {
     color: #000000;
 }
 
-.arrow-button, button {
+button {
     display: block;
     margin: 20px auto;
     padding: 10px 20px;
-    background-color: #000000;
+    background-color: rgba(1, 1, 1, 1);
     color: #FFFFFF;
     border: none;
     border-radius: 50px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    z-index: 100;
 }
 
-.arrow-button:hover, button:hover {
-    background-color: #333333;
+.selected-option {
+    background: blueviolet;
+    color: #FFFFFF;
 }
 
-.arrow-button i {
-    margin-right: 5px;
+.selected-option::before {
+    content: '✓';
+    margin-right: 10px;
 }
 
-form {
-    background-color: #FFFFFF;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+.talk-bubble button:hover {
+    background-color: blueviolet;
 }
 
-div {
+
+/* div {
     margin-bottom: 20px;
 }
 
@@ -73,6 +110,63 @@ select, input {
     border-radius: 5px;
     color: #000000;
     background-color: #FFFFFF;
+} */
+
+
+
+/* bubble and button - bubble */
+form {
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.talk-bubble {
+    display: none;
+    position: fixed;
+    left: calc(50% + 30px); 
+    bottom: calc(50% + 50px); 
+    width: 300px;
+    min-height: 90px;
+    padding: 10px;
+    background-color: lightyellow;
+    z-index: 9;
+}
+
+.border {
+    border: 8px solid #666;
+}
+.round {
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+}
+
+/* Right triangle, placed bottom left side slightly in */
+.tri-right.border.btm-left-in:before {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 30px;
+    right: auto;
+    top: auto;
+    bottom: -40px;
+    border: 20px solid;
+    border-color: #666 transparent transparent #666;
+}
+.tri-right.btm-left-in:after {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 38px;
+    right: auto;
+    top: auto;
+    bottom: -20px;
+    border: 12px solid;
+    border-color: lightyellow transparent transparent lightyellow;
 }
 
 #recommendation {
@@ -82,3 +176,88 @@ select, input {
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
+
+/* talk bubble contents */
+/* .talktext {
+    padding: 1em;
+    text-align: left;
+    line-height: 1.5em;
+} */
+/* .talktext p { */
+    /* remove webkit p margins */
+    /* -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+} */
+
+
+/*return home*/
+.return-home-button {
+    position: fixed; 
+    top: 30px; 
+    left: 15px; 
+    font-size: 24px; 
+    cursor: pointer; 
+    color: #959599;
+    z-index: 15;
+  }
+  
+  .return-home-button i:hover {
+    color: #101010; 
+  }
+
+
+  
+  /*cloud*/
+  html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* .satic-area {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url(../img/poster-about.jpg) no-repeat center;
+    background-size: cover;
+  } */
+  
+  .dynamic-area1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: url(../img/poster-drop-animate2.png) repeat 0px 0px;
+    background-size: cover;
+    animation: posterDrop1 6000s linear infinite;
+    z-index: 1;
+  }
+  
+  @keyframes posterDrop1 {
+    from { background-position: 0 0; }
+    to { background-position: 4000% 0; }
+  }
+  
+  .dynamic-area2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: url(../img/poster-drop-animate1.png) repeat 0px 0px;
+    background-size: cover;
+    animation: posterDrop2 8000s linear infinite;
+  }
+  
+  @keyframes posterDrop2 {
+    from { background-position: 0 0; }
+    to { background-position: 30000% 0; }
+  }
+
+  .dynamic-area1, .dynamic-area2 {
+    height: 5000px;
+}
+
+    

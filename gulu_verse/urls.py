@@ -33,6 +33,7 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(next_page='index0'), name='logout'),
     path('register/', views.register_view, name='register'),
     path('about/', views.about_view, name='about'),
+    path('todo/', views.todo_view, name='todo'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

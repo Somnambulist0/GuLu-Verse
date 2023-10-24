@@ -6,15 +6,58 @@
     <title>Gulu's Adventure</title>
     <link rel="stylesheet" href="../static/css/mainstyles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMt23cez/5paNdF+TmFE5Mg5l5z5XZn8GpJ1F9b" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/e7742c88b3.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="window">
-        <h1 class="title">GULU-VERSE</h1>
-        <p>Are you ready to plan a day?</p>
-        <button class="arrow-button" onclick="nextQuestion()">
-            <i class="fas fa-arrow-right"></i> <!-- FontAwesome arrow icon -->
-        </button>
+    <div class="dynamic-area1"></div>
+    <div class="dynamic-area2"></div>
+    <div class="road" id="road">
+    <div class="character" id="character"></div>
+    <div class="talk-bubble tri-right border round btm-left-in" id="bubble1" data-position="0.2" data-question="q1">
+            <div class="question-content">
+                <h1>How do you feel?</h1>
+                <button data-answer="Happy">Happy</button>
+                <button data-answer="Sad">Sad</button>
+                <button data-answer="Neutral">Neutral</button>
+            </div>
     </div>
-    <script src="../static/js/script.js"></script>      
+    <div class="talk-bubble tri-right border round btm-left-in" id="bubble2" data-position="0.4" data-question="q2">
+            <div class="question-content">
+                <h1>Do you like rain?</h1>
+                <button data-answer="Yes">Yes</button>
+                <button data-answer="No">No</button>
+                <button data-answer="Neutral">Neutral</button>
+            </div>
+    </div>
+    <div class="talk-bubble tri-right border round btm-left-in" id="bubble3" data-position="0.6" data-question="q3">
+            <div class="question-content">
+                <h1>Do you like noisy/quiet</h1>
+                <button data-answer="Noisy">Noisy</button>
+                <button data-answer="Quiet">Quiet</button>
+                <button data-answer="Neutral">Neutral</button>
+            </div>
+    </div>
+    <div class="talk-bubble tri-right border round btm-left-in" id="bubble4" data-position="0.75" data-question="q4">
+        <div class="question-content">
+            <h1>Do you prefer outdoor activities or indoor activities?</h1>
+            <button data-answer="Outdoor">Outdoor</button>
+            <button data-answer="Indoor">Indoor</button>
+            <button data-answer="Neutral">Neutral</button>
+        </div>
+    </div>
+    <div class="talk-bubble tri-right border round btm-left-in" id="bubble5" data-position="0.9" data-question="q5">
+        <div class="question-content">
+            <h1>Do you prefer doing things alone or with somebody else?</h1>
+            <button data-answer="Alone">Alone</button>
+            <button data-answer="Somebody Else">Somebody Else</button>
+            <button data-answer="Neutral">Neutral</button>
+        </div>
+    </div>
+    </div>
+    <script src="../static/js/script.js"></script>
+    <a href="{% url 'index0' %}" class="return-home-button">
+        <i class="fa-solid fa-infinity fa-spin fa-spin-reverse fa-2xl"></i>
+    </a>    
 </body>
 </html>
+
