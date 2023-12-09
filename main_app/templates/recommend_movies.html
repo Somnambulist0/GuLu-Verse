@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
+  <title>Movie Recommendations</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <!-- Bulma Version 0.9.4-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/bulma-modal-fx/dist/css/modal-fx.min.css" />
+  <link rel="stylesheet" href="../static/css/recommend.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap&family=Lilita+One&family=Silkscreen&family=Black+Ops+One" rel="stylesheet">
+  <style>
+    ::-webkit-scrollbar{height:10px;width:10px}::-webkit-scrollbar-track{background:#efefef;border-radius:6px}::-webkit-scrollbar-thumb{background:#d5d5d5;border-radius:6px}::-webkit-scrollbar-thumb:hover{background:#c4c4c4}
+  </style>
+</head>
+<body>
+  <section class="hero is-info is-small">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <p class="bigtitle">
+          Movie Recommendations
+        </p>
+      </div>
+    </div>
+  </section>
+  <div class="box cta subheading">
+    <p class="has-text-centered">
+      <span class="tag is-primary">New</span> Check out these amazing movie picks!
+    </p>
+  </div>
+  <section class="container">
+    <div class="columns features">
+      <!-- Card for Movie 1 -->
+      {% if movie1 %}
+      <div class="column is-4">
+        <div class="card is-shady">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img src="https://image.tmdb.org/t/p/original{{ movie1.poster_path }}" alt="Poster for {{ movie1.title }}" class="modal-button" data-target="modal-card1">
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="ftitle">
+              <h4>{{ movie1.title }}</h4>
+            </div>
+            <br>
+            <span class="button is-link modal-button" data-target="modal-card1">More Info</span>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+
+      <!-- Modal for Movie 1 -->
+      <div id="modal-card1" class="modal modal-fx-3dSlit">
+        <div class="modal-background"></div>
+        <div class="modal-content is-tiny">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="https://image.tmdb.org/t/p/original{{ movie1.poster_path }}" alt="Poster for {{ movie1.title }}">
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-content">
+                  <p class="title is-4">{{ movie1.title }}</p>
+                  <p><strong>Cast:</strong> {{ movie1.cast }}</p>
+                  <p><strong>Overview:</strong> {{ movie1.overview }}</p>
+                  <p><strong>Genre:</strong> {{ movie1_type}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="modal-close is-large" aria-label="close"></button>
+      </div>
+
+      <!-- Card for Movie 2 -->
+      {% if movie2 %}
+      <div class="column is-4">
+        <div class="card is-shady">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img src="https://image.tmdb.org/t/p/original{{ movie2.poster_path }}" alt="Poster for {{ movie2.title }}" class="modal-button" data-target="modal-card2">
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="ftitle">
+              <h4>{{ movie2.title }}</h4>
+            </div>
+            <br>
+            <span class="button is-link modal-button" data-target="modal-card2">More Info</span>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+
+      <!-- Modal for Movie 2 -->
+      <div id="modal-card2" class="modal modal-fx-3dSlit">
+        <div class="modal-background"></div>
+        <div class="modal-content is-tiny">
+          <div class="card_show">
+            <div class="card_show-image">
+              <figure class="image is-4by3">
+                <img src="https://image.tmdb.org/t/p/original{{ movie2.poster_path }}" alt="Poster for {{ movie2.title }}">
+              </figure>
+            </div>
+            <div class="card_show-content">
+              <div class="media">
+                <div class="media-content">
+                  <p class="title is-4">{{ movie2.title }}</p>
+                  <p><strong>Cast:</strong> {{ movie2.cast }}</p>
+                  <p><strong>Overview:</strong> {{ movie2.overview }}</p>
+                  <p><strong>Genre:</strong> {{ movie2_type}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="modal-close is-large" aria-label="close"></button>
+      </div>
+
+      <!-- Card for Movie 3 -->
+      {% if movie3 %}
+      <div class="column is-4">
+        <div class="card is-shady">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img src="https://image.tmdb.org/t/p/original{{ movie3.poster_path }}" alt="Poster for {{ movie3.title }}" class="modal-button" data-target="modal-card3">
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="ftitle">
+              <h4>{{ movie3.title }}</h4>
+            </div>
+            <br>
+            <span class="button is-link modal-button" data-target="modal-card3">More Info</span>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+
+      <!-- Modal for Movie 3 -->
+      <div id="modal-card3" class="modal modal-fx-3dSlit">
+        <div class="modal-background"></div>
+        <div class="modal-content is-tiny">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="https://image.tmdb.org/t/p/original{{ movie3.poster_path }}" alt="Poster for {{ movie3.title }}">
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-content">
+                  <p class="title is-4">{{ movie3.title }}</p>
+                  <p><strong>Cast:</strong> {{ movie3.cast }}</p>
+                  <p><strong>Overview:</strong> {{ movie3.overview }}</p>
+                  <p><strong>Genre:</strong> {{ movie3_type}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="modal-close is-large" aria-label="close"></button>
+      </div>
+
+    </div>
+  </section>
+  <script src="https://unpkg.com/bulma-modal-fx/dist/js/modal-fx.min.js"></script>
+  <script src="https://kit.fontawesome.com/e7742c88b3.js" crossorigin="anonymous"></script>
+  <a href="{% url 'index0' %}" class="return-home-button">
+    <i class="fa-solid fa-infinity fa-spin fa-spin-reverse fa-2xl"></i>
+  </a> 
+</body>
+</html>

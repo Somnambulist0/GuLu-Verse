@@ -48,3 +48,62 @@ def about_view(request):
 def todo_view(request):
     return render(request, 'todo.html')
 
+# def recommend_view(request):
+#     return render(request, 'recommend.html')
+
+from django.http import JsonResponse
+from django.http import HttpResponseNotAllowed, HttpResponseRedirect
+from django.urls import reverse
+from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.http import require_POST
+from .models import Movie
+from .services import movie_recommendation_logic
+import json
+
+
+@csrf_exempt 
+def recommend_movies_view(request):
+    if request.method == 'POST':
+    #Json date from the front end(response)
+        data = json.loads(request.body)
+        mood = data.get('mood')
+        classic = data.get('classic')
+        noisy = data.get('noisy')
+        reality = data.get('reality')
+        alone = data.get('alone')
+
+        movies = Movie.objects.all()
+
+        # logic
+        recommended_movies = movie_recommendation_logic(mood, classic, noisy, reality, alone, movies)
+        recommended_movies_dicts = [movie.to_dict() for movie in recommended_movies]
+
+        request.session['recommended_movies'] = recommended_movies_dicts
+        
+        return HttpResponseRedirect('/display_recommendations/')
+    
+    else:
+        return HttpResponseNotAllowed(['POST'])
+    
+# def display_recommendations_view(request):
+#     recommended_movies_dicts = request.session.get('recommended_movies', [])
+#     return render(request, 'recommend_movies.html', {'movies': recommended_movies_dicts})
+
+def display_recommendations_view(request):
+    recommended_movies = request.session.get('recommended_movies', [])
+    context = {
+        'movie1': recommended_movies[0] if len(recommended_movies) > 0 else None,
+        'movie2': recommended_movies[1] if len(recommended_movies) > 1 else None,
+        'movie3': recommended_movies[2] if len(recommended_movies) > 2 else None,
+        'movie1_type': recommended_movies[0].get('classification', {}).get('type') if len(recommended_movies) > 0 else None,
+        'movie2_type': recommended_movies[1].get('classification', {}).get('type') if len(recommended_movies) > 1 else None,
+        'movie3_type': recommended_movies[2].get('classification', {}).get('type') if len(recommended_movies) > 2 else None,
+    }
+    return render(request, 'recommend_movies.html', context)
+
+
+
+
+
+
+

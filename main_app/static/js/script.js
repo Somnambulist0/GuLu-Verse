@@ -21,9 +21,8 @@ document.body.addEventListener('click', function(event) {
     if (event.target.tagName.toLowerCase() === 'button' && event.target.hasAttribute('data-answer')) {
         const answer = event.target.getAttribute('data-answer');
         const question = event.target.closest('.talk-bubble').getAttribute('data-question');
-
-        if (!answers.includes(question)) {
-            answers.push(question);
+        if (!answers.some(ans => ans.question === question)) {
+            answers.push({ question: question, answer: answer });
         }
 
         const bubbleButtons = event.target.closest('.talk-bubble').querySelectorAll('button');
@@ -36,10 +35,38 @@ document.body.addEventListener('click', function(event) {
             displayRecommendation();
         }
     }
+
 });
 
 function displayRecommendation() {
-    alert("Based on your answers, we recommend you to have a relaxing day and enjoy some music!");
+    // Collect the data you need to send to the server
+    const requestData = {
+        mood: answers.find(answer => answer.question === 'q1')?.answer,
+        classic: answers.find(answer => answer.question === 'q2')?.answer,
+        noisy: answers.find(answer => answer.question === 'q3')?.answer,
+        reality: answers.find(answer => answer.question === 'q4')?.answer,
+        alone: answers.find(answer => answer.question === 'q5')?.answer
+
+    };
+
+    // Send the data to the Django backend 
+    fetch('/recommend_movies/', { 
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(requestData)
+    })
+    .then(response => {
+        if (response.ok) {
+            window.location.href = '/display_recommendations/';
+        } else {
+            throw new Error('Network response was not ok.');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
 }
 
 

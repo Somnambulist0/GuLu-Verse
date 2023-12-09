@@ -6,105 +6,32 @@
     <title>Todo List</title>
     <link rel="stylesheet" href="../static/css/todo.css">
     <script src="https://kit.fontawesome.com/e7742c88b3.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <div class="satic-area">
         <div class="dynamic-area1"></div>
         <div class="dynamic-area2"></div>
     </div>
-    <section class="container ">
+    <section class="container">
         <div class="heading">
             <img class="heading__img" src="../static/img/ball0.png">
             <h1 class="heading__title">99-Things ToDo</h1>
         </div>
         <div class="form">
             <label class="form__label">~ This year I need to ~</label>
+            <div class="form__group">
+                <input type="text" class="form__input" id="new-task" placeholder="Add new task...">
+                <button class="form__submit-button">Submit</button>
+            </div>            
             <div id="tasks">
-                <div class="task">
-                    <input class="form__input-checkbox" type="checkbox" id="task1">
-                    <label class="form__input-label" for="task1">Start a BLOG</label>
-                </div>
-                <div class="task">
-                    <input class="form__input-checkbox" type="checkbox" id="task2">
-                    <label class="form__input-label" for="task2">Learn a new skill</label>
-                </div>
-                <div class="task">
-                    <input class="form__input-checkbox" type="checkbox" id="task3">
-                    <label class="form__input-label" for="task3">Travel abroad</label>
-                </div>
-                <div class="task">
-                    <input class="form__input-checkbox" type="checkbox" id="task4">
-                    <label class="form__input-label" for="task4">Skydive 10000ft (AFF) – (Taz)</label>
-                </div>
-                <div class="task">
-                    <input class="form__input-checkbox" type="checkbox" id="task5">
-                    <label class="form__input-label" for="task5">Bungee jump – (Taz)</label>
-                </div>
-                <div class="task">
-                    <input class="form__input-checkbox" type="checkbox" id="task6">
-                    <label class="form__input-label" for="task6">Have one piece of work published (Recognised Journal/Book)</label>
-                </div>
-                <div class="task">
-                    <input class="form__input-checkbox" type="checkbox" id="task7">
-                    <label class="form__input-label" for="task7">Start A VLOG (YouTube Channel)</label>
-                </div>
-                <div class="task">
-                    <input class="form__input-checkbox" type="checkbox" id="task8">
-                    <label class="form__input-label" for="task8">See the Northern Lights (Vanessa)</label>
-                </div>
-                <div class="task">
-                    <input class="form__input-checkbox" type="checkbox" id="task9">
-                    <label class="form__input-label" for="task9">Start a business</label>
-                </div>
-                <div class="task">
-                    <input class="form__input-checkbox" type="checkbox" id="task10">
-                    <label class="form__input-label" for="task10">Drive across the US (Route 66) – (Taz)</label>
-                </div>
-                <div class="task">
-                    <input class="form__input-checkbox" type="checkbox" id="task11">
-                    <label class="form__input-label" for="task11">Complete the Nurburgring</label>
-                </div>
-                <div class="task">
-                    <input class="form__input-checkbox" type="checkbox" id="task12">
-                    <label class="form__input-label" for="task12">Find a mentor willing to put up with me (0/1)</label>
-                </div>
-                <div class="task">
-                    <input class="form__input-checkbox" type="checkbox" id="task13">
-                    <label class="form__input-label" for="task13">Learn to cook 99 dishes</label>
-                </div>
-                <div class="task">
-                    <input class="form__input-checkbox" type="checkbox" id="task14">
-                    <label class="form__input-label" for="task14">Bungee jump – (Taz)</label>
-                </div>
-                <div class="task">
-                    <input class="form__input-checkbox" type="checkbox" id="task15">
-                    <label class="form__input-label" for="task15">Take a leap of faith</label>
-                </div>
-                <div class="task">
-                    <input class="form__input-checkbox" type="checkbox" id="task16">
-                    <label class="form__input-label" for="task16">Have one piece of work published (Recognised Journal/Book)</label>
-                </div>
-                <div class="task">
-                    <input class="form__input-checkbox" type="checkbox" id="task17">
-                    <label class="form__input-label" for="task17">Start A VLOG (YouTube Channel)</label>
-                </div>
-                <div class="task">
-                    <input class="form__input-checkbox" type="checkbox" id="task18">
-                    <label class="form__input-label" for="task18">See the Northern Lights (Vanessa)</label>
-                </div>
-                <div class="task">
-                    <input class="form__input-checkbox" type="checkbox" id="task19">
-                    <label class="form__input-label" for="task19">Start a business</label>
-                </div>
-                <div class="task">
-                    <input class="form__input-checkbox" type="checkbox" id="task20">
-                    <label class="form__input-label" for="task20">Drive across the US (Route 66)</label>
-                </div>
+
             </div>
-        
+        </div>
     </section>
     <a href="{% url 'index0' %}" class="return-home-button">
         <i class="fa-solid fa-infinity fa-spin fa-spin-reverse fa-2xl"></i>
-    </a> 
+    </a>
+    <script src="../static/js/todo.js"></script>
 </body>
 </html>
