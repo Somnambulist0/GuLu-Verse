@@ -3,6 +3,11 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
+from django.core.mail import send_mail
+from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.http import require_http_methods
+import json
 from .models import UserProfile
 
 
@@ -100,6 +105,35 @@ def display_recommendations_view(request):
         'movie3_type': recommended_movies[2].get('classification', {}).get('type') if len(recommended_movies) > 2 else None,
     }
     return render(request, 'recommend_movies.html', context)
+
+
+#sent email
+@csrf_exempt
+@require_http_methods(["POST"])
+def submit_form(request):
+    data = json.loads(request.body)
+    name = data.get('name')
+    email = data.get('email')
+
+    # send email to admin
+    send_mail(
+        'New Join Us Submission',
+        f'Name: {name}\nEmail: {email}',
+        'serviceguluverse@outlook.com',  
+        ['serviceguluverse@outlook.com'],  
+        fail_silently=False,
+    )
+
+    # send email to user
+    send_mail(
+        'Thank you for your submission',
+        f'Hi {name}:\nThank you for your submission to join us!',
+        'serviceguluverse@outlook.com',  
+        [email],
+        fail_silently=False,
+    )
+
+    return JsonResponse({'message': 'Form submitted successfully'})
 
 
 

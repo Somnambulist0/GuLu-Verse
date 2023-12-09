@@ -7,6 +7,7 @@
     <title>Gulu-verse</title>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/15181efa86.js" crossorigin="anonymous"></script>
+    <script src="../static/js/submit.js" defer></script>
     <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.4/css/bulma.min.css" />
     <link rel="stylesheet" type="text/css" href="../static/css/index0.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -73,38 +74,39 @@
     </section>
     <section class="cta va transparent-divider">
       <div class="container">
-        <div class="columns">
-          <div class="column is-6">
-            <h1 class="title is-1 ">JOIN US</h1>
-            <hr class="content-divider">
-            <h2 class="subtitle"></h2>
+          <div class="columns">
+              <div class="column is-6">
+                  <h1 class="title is-1 ">JOIN US</h1>
+                  <hr class="content-divider">
+                  <h2 class="subtitle"></h2>
+              </div>
+              <div class="column is-6">
+                  <form id="joinForm">
+                      <div class="field">
+                          <label class="label">Name</label>
+                          <div class="control">
+                              <input class="input is-medium" type="text" name="name" placeholder="William">
+                          </div>
+                      </div>
+                      <br>
+                      <div class="field">
+                          <label class="label">Email</label>
+                          <div class="control">
+                              <input class="input is-medium" type="email" name="email" placeholder="william@guluverse.com">
+                          </div>
+                      </div>
+                      <br>
+                      <div class="field is-grouped">
+                          <div class="control">
+                              <button type="submit" class="button is-white is-rounded is-outlined">Submit</button>
+                          </div>
+                      </div>
+                  </form>
+              </div>
           </div>
-          <div class="column is-6">
-            <div class="field">
-              <label class="label">Name</label>
-              <div class="control">
-                <input class="input is-medium" type="text" placeholder="William">
-              </div>
-            </div>
-            <br>
-            <div class="field">
-              <label class="label">Email</label>
-              <div class="control">
-                <input class="input is-medium" type="email" placeholder="william@guluverse.com">
-              </div>
-            </div>
-            <br>
-            <div class="field is-grouped">
-              <div class="control">
-                <button class="button is-white is-rounded is-outlined">Submit</button>
-              </div>
-
-            </div>
-          </div>
-        </div>
       </div>
-
-    </section>   
+  </section>
+  
     <footer class="footer">
       <div class="content has-text-centered">
           © 2023 Gulu-verse. All rights reserved.

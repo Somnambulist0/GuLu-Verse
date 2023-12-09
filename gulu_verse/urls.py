@@ -36,6 +36,7 @@ urlpatterns = [
     path('todo/', views.todo_view, name='todo'),
     path('recommend_movies/', views.recommend_movies_view, name='recommend_movies'),
     path('display_recommendations/', views.display_recommendations_view, name='display_recommendations'),
+    path('submit-form', views.submit_form, name='submit_form'),
 ]
 
 if settings.DEBUG:

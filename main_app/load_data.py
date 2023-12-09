@@ -39,22 +39,3 @@ def save_movie_data(movies_data, genres_map):
             poster_path=poster_path 
         )
 
-# def save_movie_data(movies_data, genres_map):
-#     for movie_data in movies_data:
-#         # analyze movie_data
-#         classification = classify_movie(movie_data, genres_map)
-#         title = movie_data['title']
-#         genre_ids = movie_data['genre_ids'] 
-#         overview = movie_data['overview']
-#         vote_average = movie_data['vote_average']
-#         release_date = movie_data.get('release_date', '')
-
-#         # save movie_data to database
-#         Movie.objects.create(
-#             title=title,
-#             genre=','.join(map(str, genre_ids)),  
-#             classification=classification,
-#             overview=overview,
-#             vote_average=vote_average,
-#             release_date=datetime.strptime(release_date, '%Y-%m-%d') if release_date else None
-#         )
