@@ -119,8 +119,8 @@ def submit_form(request):
     send_mail(
         'New Join Us Submission',
         f'Name: {name}\nEmail: {email}',
-        'serviceguluverse@outlook.com',  
-        ['serviceguluverse@outlook.com'],  
+        'YOUR_EMAIL_ADDRESS',  
+        ['YOUR_EMAIL_ADDRESS'],  
         fail_silently=False,
     )
 
@@ -128,7 +128,7 @@ def submit_form(request):
     send_mail(
         'Thank you for your submission',
         f'Hi {name}:\nThank you for your submission to join us!',
-        'serviceguluverse@outlook.com',  
+        'YOUR_EMAIL_ADDRESS',  
         [email],
         fail_silently=False,
     )
